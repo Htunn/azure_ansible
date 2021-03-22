@@ -1,0 +1,20 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: False
+ # collections:
+ #   - azure.azcollection
+  tasks:
+
+
+  - name: Create Azure VM
+    azure_rm_virtualmachine:
+        resource_group: HTUNN
+        name: ubuntu 
+        admin_username: htunn 
+        admin_password: password123 
+        image:
+          offer: Ubuntu
+          publisher: Ubuntu
+          sku: '18.04'
+          version: latest
